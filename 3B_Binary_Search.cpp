@@ -1,0 +1,46 @@
+#include<iostream.h>
+#include<conio.h>
+void main()
+{
+clrscr();
+int a[20], i, num, n, count=0, position;
+cout<<"Enter Total Number of Elements : ";
+cin>>n;
+cout<<endl;
+cout<<"Enter Elements : ";
+for(i=0;i<n;i++)
+{
+cin>>a[i];
+}
+cout<<endl;
+cout<<"Enter Elements to be Searched : ";
+int s, first, last, mid;
+cin>>s;
+cout<<endl;
+first=0;
+last=n-1;
+mid=(first+last)/2;
+while(first<=last)
+{
+if(a[mid]<s)
+{
+first=mid+1;
+}
+else if(a[mid]==s)
+{
+cout<<s<<" Found at "<<mid+1<<endl;
+count=1;
+break;
+}
+else
+{
+last=mid-1;
+}
+mid=(first+last)/2;
+}
+if(count==0)
+{
+cout<<"Desired Element is not Found in the Array!";
+}
+getch();
+}
